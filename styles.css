@@ -33,7 +33,7 @@ button:hover {
   transition: background-color 0.3s ease;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1024px) {
   .hide-on-small {
     display: none;
   }
@@ -43,13 +43,13 @@ button:hover {
   transition: background-color 0.3s ease;
 }
 
-@media (min-width: 801px) {
+@media (min-width: 1025px) {
   .hover-bg-change-large:hover {
     background-color: #d9d9d9;
     transition: background-color 0.3s ease;
   }
 }
-@media (max-width: 800px) {
+@media (max-width: 1024px) {
   .hover-bg-change-small:hover {
     background-color: black;
     transition: background-color 0.3s ease;
@@ -60,7 +60,7 @@ button:hover {
     background-color: #001a33;
   }
 }
-@media (max-width: 800px) {
+@media (max-width: 1024px) {
   body {
     background-color: white;
     padding: 10px;
@@ -87,8 +87,22 @@ button:hover {
     background-color: #28a745;
     color: #fff;
   }
+  .user-info {
+    padding: 10px;
+    border: 1px solid #003262;
+    border-radius: 8px;
+    background-color: white;
+  }
+  .img_containerr {
+    margin: 10px 0;
+    text-align: center;
+  }
+  .img_containerr img {
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
 }
-@media (max-width: 800px) {
+@media (max-width: 1024px) {
   .reorder-on-small {
     display: flex;
     flex-direction: column;

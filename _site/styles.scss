@@ -18,15 +18,6 @@ $transition-duration: 0.3s;
   }
 }
 
-// Mixin for media queries
-@mixin respond-to($media) {
-  @if $media == "small" {
-    @media (max-width: 800px) { @content; }
-  } @else if $media == "large" {
-    @media (min-width: 801px) { @content; }
-  }
-}
-
 // Base styles
 body {
   font-family: 'Roboto', sans-serif;
@@ -66,7 +57,7 @@ button {
 }
 
 // Hide element on small screens
-@media (max-width: 800px) {
+@media (max-width: 1024px) {
   .hide-on-small {
     display: none;
   }
@@ -78,14 +69,14 @@ button {
 }
 
 // Change background color on hover only for large screens
-@include respond-to("large") {
+@media (min-width: 1025px) {
   .hover-bg-change-large {
     @include hover-effect($hover-bg-color-large);
   }
 }
 
 // Change background color on hover only for small screens with more noticeable effect
-@include respond-to("small") {
+@media (max-width: 1024px) {
   .hover-bg-change-small {
     @include hover-effect($hover-bg-color-small);
   }
@@ -100,7 +91,7 @@ button {
 }
 
 // Additional styles for small screens
-@include respond-to("small") {
+@media (max-width: 1024px) {
   body {
     background-color: lighten($bg-color, 5%);
     padding: 10px;
@@ -132,10 +123,27 @@ button {
     background-color: #28a745; // Green color for footer on small screens
     color: #fff;
   }
+
+  .user-info {
+    padding: 10px;
+    border: 1px solid $primary-color;
+    border-radius: $border-radius;
+    background-color: lighten($bg-color, 10%);
+  }
+  
+  .img_containerr {
+    margin: 10px 0;
+    text-align: center;
+    
+    img {
+      border-radius: $border-radius;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  }
 }
 
 // Change order of elements on small screens
-@include respond-to("small") {
+@media (max-width: 1024px) {
   .reorder-on-small {
     display: flex;
     flex-direction: column;
