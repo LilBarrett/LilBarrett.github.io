@@ -7,6 +7,7 @@ $hover-bg-color: lighten($bg-color, 10%);
 $hover-bg-color-large: darken($bg-color, 10%);
 $hover-bg-color-small: darken($primary-color, 20%);
 $secondary-color: #1E90FF;
+$footer-color-small: #28a745; // Green color for footer on small screens
 $border-radius: 8px;
 $transition-duration: 0.3s;
 
@@ -56,13 +57,6 @@ button {
   }
 }
 
-// Hide element on small screens
-@media (max-width: 1024px) {
-  .hide-on-small {
-    display: none;
-  }
-}
-
 // Change background color on hover
 .hover-bg-change {
   @include hover-effect($hover-bg-color);
@@ -72,81 +66,6 @@ button {
 @media (min-width: 1025px) {
   .hover-bg-change-large {
     @include hover-effect($hover-bg-color-large);
-  }
-}
-
-// Change background color on hover only for small screens with more noticeable effect
-@media (max-width: 1024px) {
-  .hover-bg-change-small {
-    @include hover-effect($hover-bg-color-small);
-  }
-
-  .hover-bg-change-small {
-    &:hover {
-      transform: scale(1.05);
-      border: 2px solid $secondary-color;
-      background-color: lighten($hover-bg-color-small, 10%);
-    }
-  }
-}
-
-// Additional styles for small screens
-@media (max-width: 1024px) {
-  body {
-    background-color: lighten($bg-color, 5%);
-    padding: 10px;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    color: darken($primary-color, 10%);
-  }
-
-  button {
-    background-color: lighten($primary-color, 10%);
-    &:hover {
-      background-color: lighten($secondary-color, 10%);
-      transform: scale(1.1);
-    }
-  }
-
-  table {
-    font-size: 0.9rem;
-  }
-
-  input[type="text"],
-  input[type="email"],
-  select {
-    font-size: 0.9rem;
-  }
-
-  footer {
-    background-color: #28a745; // Green color for footer on small screens
-    color: #fff;
-  }
-
-  .user-info {
-    padding: 10px;
-    border: 1px solid $primary-color;
-    border-radius: $border-radius;
-    background-color: lighten($bg-color, 10%);
-  }
-  
-  .img_containerr {
-    margin: 10px 0;
-    text-align: center;
-    
-    img {
-      border-radius: $border-radius;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-  }
-}
-
-// Change order of elements on small screens
-@media (max-width: 1024px) {
-  .reorder-on-small {
-    display: flex;
-    flex-direction: column;
   }
 }
 
@@ -248,4 +167,88 @@ footer {
   background-color: $primary-color;
   color: #fff;
   border-radius: $border-radius;
+}
+
+// Media queries
+
+// Hide element on small screens
+@media (max-width: 1024px) {
+  .hide-on-small {
+    display: none;
+  }
+}
+
+// Change background color on hover only for small screens with more noticeable effect
+@media (max-width: 1024px) {
+  .hover-bg-change-small {
+    @include hover-effect($hover-bg-color-small);
+  }
+
+  .hover-bg-change-small {
+    &:hover {
+      transform: scale(1.05);
+      border: 2px solid $secondary-color;
+      background-color: lighten($hover-bg-color-small, 10%);
+    }
+  }
+}
+
+// Additional styles for small screens
+@media (max-width: 1024px) {
+  body {
+    background-color: lighten($bg-color, 5%);
+    padding: 10px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: darken($primary-color, 10%);
+  }
+
+  button {
+    background-color: lighten($primary-color, 10%);
+    &:hover {
+      background-color: lighten($secondary-color, 10%);
+      transform: scale(1.1);
+    }
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  select {
+    font-size: 0.9rem;
+  }
+
+  footer {
+    background-color: $footer-color-small; // Green color for footer on small screens
+    color: #fff;
+  }
+
+  .user-info {
+    padding: 10px;
+    border: 1px solid $primary-color;
+    border-radius: $border-radius;
+    background-color: lighten($bg-color, 10%);
+  }
+
+  .img_containerr {
+    margin: 10px 0;
+    text-align: center;
+
+    img {
+      border-radius: $border-radius;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+// Change order of elements on small screens
+@media (max-width: 1024px) {
+  .reorder-on-small {
+    display: flex;
+    flex-direction: column;
+  }
 }
